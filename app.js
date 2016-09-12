@@ -1,8 +1,6 @@
-'use strict';
-
-/**
- * Module dependencies.
- */
-var app = require('./config/lib/app');
-var server = app.start();
-
+var http = require('http');
+var server = http.createServer(function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("hello world!\n");
+});
+server.listen(3000);
